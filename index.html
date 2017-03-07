@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="heroApp">
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body ng-controller="heroController as vm">
+  <h1>The Heroes!</h1>
+  <input placeholder="Search by Hero Name" ng-model="search.name"><p>
+  <div ng-repeat="hero in vm.heroes | filter:search" ng-class="{ 'imageColor' : hero.group === 'Image Comics', 'marvelColor' : hero.group === 'Marvel' }">
 
+      <div class="heroList" ng-class="{marvel, dccomics, independent}">
+      <h3>{{hero.name}}</h3>
+      <h4>{{hero.number}}</h4>
+      <h4>{{hero.group}}</h4>
+      <img src="{{hero.img}}" />
+    </div>
+
+
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js">
+    </script>
   <script src="app.js"></script>
 </body>
 </html>

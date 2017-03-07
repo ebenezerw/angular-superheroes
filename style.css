@@ -1,0 +1,16 @@
+.heroList {
+  border: 1px black solid;
+}
+
+
+img{
+  height: 200px;
+}
+
+.imageColor{
+  background-color: red;
+}
+
+.marvelColor{
+  background-color: green;
+}
